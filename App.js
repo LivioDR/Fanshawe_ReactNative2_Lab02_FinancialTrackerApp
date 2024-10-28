@@ -1,6 +1,5 @@
 // React imports
 import { useState, useEffect } from "react";
-import { View, Text, ActivityIndicator } from "react-native";
 
 // Navigation imports
 import { NavigationContainer } from "@react-navigation/native";
@@ -15,7 +14,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 // Placeholders
 import PlaceholderScreen from "./screens/PlaceholderScreen";
-import placeholderData from "./utilities/PlaceholderData";
+import placeholderData from "./utilities/placeholderData"
 
 const Tab = createBottomTabNavigator()
 
@@ -26,10 +25,7 @@ export default function App() {
 
   useEffect(()=>{
     setData(placeholderData)
-    setTimeout(()=>{
-      setLoading(false)
-
-    },2500)
+    setLoading(false)
   },[])
 
   if(loading){

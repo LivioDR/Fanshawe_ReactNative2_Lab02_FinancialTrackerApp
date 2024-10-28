@@ -13,7 +13,7 @@ const TransactionsNav = ({transactions}) => {
                 name="Transactions List"
                 children={() => <TransactionsList transactions={transactions} />}
                 options={{
-                    headerShown: false,
+                    headerTitle: "Transactions"
                 }}
             />
 

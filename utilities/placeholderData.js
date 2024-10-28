@@ -1,5 +1,8 @@
 import uuid from 'react-native-uuid';
 
+// range of days for the data to be created
+const days = 30
+
 // definition of the payment methods
 const method = {
     credit: "Card - ****4321",
@@ -11,7 +14,7 @@ const method = {
 
 // function to get a random date for the placeholder transaction
 const getRandomDate = () => {
-    return new Date(new Date().getTime() - (1000 * 60 * 60 * (Math.random() * 24 * 30))).toISOString()
+    return new Date(new Date().getTime() - (1000 * 60 * 60 * 24 * (Math.random() * days))).toISOString()
 }
 
 export default placeholderData = [

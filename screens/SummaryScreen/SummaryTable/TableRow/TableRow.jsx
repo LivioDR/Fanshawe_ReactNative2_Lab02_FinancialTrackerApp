@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { View, Text } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import getCategoryIcon from "../../../../utilities/getCategoryIcon";

@@ -1,8 +1,7 @@
 import React from 'react'
-import { ScrollView, View, Text } from 'react-native'
+import { ScrollView } from 'react-native'
 import PieChartComponent from './PieChart/PieChartComponent'
 import SummaryHeader from './SummaryHeader/SummaryHeader'
-import TableRow from './SummaryTable/TableRow/TableRow'
 import getColorsArray from '../../utilities/getColorsArray'
 import SummaryTable from './SummaryTable/SummaryTable'
 
@@ -12,9 +11,6 @@ export default SummaryScreen = ({transactions}) => {
     // calculating the income and outcome for the period
     let incomeAmount = parseFloat(transactions.filter(item => item.category == "Income").map(item => item.amount).reduce((acc, cur) => acc + cur, 0)).toFixed(2)
     let outcomeAmount = parseFloat(transactions.filter(item => item.category != "Income").map(item => item.amount).reduce((acc, cur) => acc + cur, 0)).toFixed(2)
-
-    // getting the categories
-    const categories = [...new Set(transactions.map(item => item.category))]
 
     // getting then the amount per category
     let amounts = {}

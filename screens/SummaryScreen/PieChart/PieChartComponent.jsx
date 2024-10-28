@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import PieChart from 'react-native-pie-chart'
-import getColorsArray from '../../../utilities/getColorsArray'
 
 // This screen was created with the following component, by following the instructions in the documentation page
 // https://www.npmjs.com/package/react-native-pie-chart

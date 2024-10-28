@@ -63,4 +63,28 @@ export default placeholderData = [
         date: getRandomDate(),
         paymentMethod: method.bank
     },
+    {
+        id: uuid.v4(),
+        desc: "Insurance - Family opt-in",
+        category: "Health",
+        amount: 987.65,
+        date: getRandomDate(),
+        paymentMethod: method.debit
+    },
+    {
+        id: uuid.v4(),
+        desc: "Halloween treats",
+        category: "Leisure",
+        amount: 7.12,
+        date: getRandomDate(),
+        paymentMethod: method.cash
+    },
+    {
+        id: uuid.v4(),
+        desc: "Investment account",
+        category: "Income",
+        amount: 6723.12,
+        date: getRandomDate(),
+        paymentMethod: method.bank
+    },
 ]

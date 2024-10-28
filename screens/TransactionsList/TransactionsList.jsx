@@ -1,10 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
+import TransactionCard from "./TransactionCard/TransactionCard";
 
 const TransactionsList = ({transactions}) => {
     return(
-        <View style={{display: 'flex', width: '100%'}}>
-            {transactions.map(item => <View key={item.id} style={{display: 'flex', width: '100%',}}><Text>{JSON.stringify(item.desc)}</Text></View>)}
+        <View style={{display: 'flex', width: '100%', alignItems: 'center', flexDirection: 'column',}}>
+            <FlatList
+                data={transactions}
+                keyExtractor={data => data.id}
+                renderItem={data => 
+                    <TransactionCard data={data.item} />
+                }
+            />
         </View>
     )
 }

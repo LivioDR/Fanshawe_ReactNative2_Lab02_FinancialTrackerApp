@@ -8,12 +8,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // Screens & components imports
 import TransactionsNav from "./screens/TransactionsNav";
 import LoadingScreen from "./screens/LoadingScreen";
+import SummaryScreen from "./screens/SummaryScreen/SummaryScreen";
 
 // Styling imports
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 // Placeholders
-import PlaceholderScreen from "./screens/PlaceholderScreen";
 import placeholderData from "./utilities/placeholderData"
 
 const Tab = createBottomTabNavigator()
@@ -57,8 +57,9 @@ export default function App() {
         />
         <Tab.Screen 
         name="Summary"
-        component={PlaceholderScreen}
+        children={() => <SummaryScreen transactions={data}/>}
         options={{
+          headerShown: true,
           tabBarIcon: ({ color, size }) => (
             <Ionicons
               name="list-outline"

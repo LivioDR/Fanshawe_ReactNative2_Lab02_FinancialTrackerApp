@@ -13,8 +13,6 @@ const TransactionDetail = () => {
     const date = transaction.date.split("T")[0]
     const time = transaction.date.split("T")[1].split(".")[0]
 
-    console.log(transaction)
-
     return(
         <View style={styles.container}>
             <View style={styles.receipt}>

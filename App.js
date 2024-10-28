@@ -24,8 +24,9 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
-    placeholderData.sort((a,b) => {return a.date - b.date})
-    setData(placeholderData)
+    const sortedData = placeholderData.sort((a,b) => {return new Date(a.date).getTime() - new Date(b.date).getTime()})
+    console.log(sortedData)
+    setData(sortedData)
     setLoading(false)
   },[])
 

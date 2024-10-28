@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import PlaceholderScreen from "./PlaceholderScreen";
 import TransactionsList from "./TransactionsList/TransactionsList";
+import TransactionDetail from "./TransactionDetail/TransactionDetail";
 
 const Stack = createNativeStackNavigator()
 
@@ -19,10 +19,7 @@ const TransactionsNav = ({transactions}) => {
 
             <Stack.Screen
                 name="Transaction Detail"
-                component={PlaceholderScreen}
-                options={{
-                    headerTitle: "Transaction title",
-                }}
+                component={TransactionDetail}
             />
     </Stack.Navigator>
     )

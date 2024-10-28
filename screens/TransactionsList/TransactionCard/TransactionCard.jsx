@@ -1,34 +1,13 @@
 import { View, Text } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from "./TransactionCardStyles";
+import getCategoryIcon from "../../../utilities/getCategoryIcon";
 
 
 const TransactionCard = ({data}) => {
 
     // defining the icon for the category
-    let categoryIcon
-    switch(data.category){
-        case 'Leisure':
-            categoryIcon = "fast-food-outline"
-            break
-        case 'Education':
-            categoryIcon = "school-outline"
-            break
-        case 'Health':
-            categoryIcon = "bandage-outline"
-            break
-        case 'Groceries':
-            categoryIcon = "bag-handle-outline"
-            break
-        case 'Services & utilities':
-            categoryIcon = "bulb-outline"
-            break
-        case 'Income':
-            categoryIcon = "cash-outline"
-            break
-        default:
-            categoryIcon = "bar-chart-outline"
-    }
+    let categoryIcon = getCategoryIcon(data.category)
 
     return(
         <View style={styles.wrapper}>

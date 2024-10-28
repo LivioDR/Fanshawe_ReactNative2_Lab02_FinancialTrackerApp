@@ -38,7 +38,7 @@ export default TransactionCardStyles = StyleSheet.create({
         fontSize: 18,
     },
     amount: {
-        fontWeight: 400,
+        fontWeight: '400',
     },
     detailsRow: {
         width: '100%',
@@ -50,7 +50,7 @@ export default TransactionCardStyles = StyleSheet.create({
     },
     date: {
         color: '#3d3d3d',
-        fontWeight: 100,
+        fontWeight: 'light',
         fontSize: 14,
     },
     method: {

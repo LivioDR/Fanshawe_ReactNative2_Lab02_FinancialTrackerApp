@@ -1,16 +1,42 @@
+// React imports
+import { useState, useEffect } from "react";
+import { View, Text, ActivityIndicator } from "react-native";
+
+// Navigation imports
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import PlaceholderScreen from "./screens/PlaceholderScreen";
-import { useState } from "react";
-import placeholderData from "./utilities/PlaceholderData";
+
+// Screens & components imports
 import TransactionsNav from "./screens/TransactionsNav";
+import LoadingScreen from "./screens/LoadingScreen";
+
+// Styling imports
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+// Placeholders
+import PlaceholderScreen from "./screens/PlaceholderScreen";
+import placeholderData from "./utilities/PlaceholderData";
 
 const Tab = createBottomTabNavigator()
 
 export default function App() {
 
-  const [data, setData] = useState(placeholderData)
+  const [data, setData] = useState()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=>{
+    setData(placeholderData)
+    setTimeout(()=>{
+      setLoading(false)
+
+    },2500)
+  },[])
+
+  if(loading){
+    return(
+      <LoadingScreen/>
+    )
+  }
 
   return (
     <NavigationContainer>

@@ -1,3 +1,6 @@
+import uuid from 'react-native-uuid';
+
+// definition of the payment methods
 const method = {
     credit: "Card - ****4321",
     debit: "Card - ****2233",
@@ -6,54 +9,58 @@ const method = {
     cash: "Cash",
 }
 
+// function to get a random date for the placeholder transaction
+const getRandomDate = () => {
+    return new Date(new Date().getTime() - (1000 * 60 * 60 * (Math.random() * 24 * 30))).toISOString()
+}
 
 export default placeholderData = [
     {
-        id: 1,
+        id: uuid.v4(),
         desc: "Starbucks",
         category: "Leisure",
         amount: 3.45,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.transfer,
     },
     {
-        id: 2,
+        id: uuid.v4(),
         desc: "Fanshawe - Tuition",
         category: "Education",
         amount: 8549.99,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.bank,
     },
     {
-        id: 3,
+        id: uuid.v4(),
         desc: "Uber",
         category: "Services & utilities",
         amount: 12.34,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.credit,
     },
     {
-        id: 4,
+        id: uuid.v4(),
         desc: "Real Canadian Superstore",
         category: "Groceries",
         amount: 420.69,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.debit
     },
     {
-        id: 5,
-        desc: "Apple Canada",
+        id: uuid.v4(),
+        desc: "Payroll - Apple Canada",
         category: "Income",
         amount: 4780.23,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.bank
     },
     {
-        id: 6,
+        id: uuid.v4(),
         desc: "CRA",
         category: "Services & utilities",
         amount: 1234.07,
-        date: new Date() - (1000 * 60 * 60 * (Math.random() * 24 * 30)),
+        date: getRandomDate(),
         paymentMethod: method.bank
     },
 ]
